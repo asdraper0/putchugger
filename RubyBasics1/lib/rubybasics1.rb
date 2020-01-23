@@ -10,7 +10,24 @@ end
 
 # Part II
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.size == 0
+    return 0
+  elsif arr.size == 1
+    return arr[0]
+  end
+  
+  first = -255
+  second = -255
+  
+  arr.each do |x|
+    if x > first
+      first = x
+    elsif x > second
+      second = x
+    end
+  end
+  
+  return first + second
 end
 
 # Part III
