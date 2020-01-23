@@ -32,23 +32,25 @@ end
 
 # Part III
 def sum_to_n? arr, n
-  if arr.size < 2
+  if (arr.length == 0)
     return false
-  end 
-  
-  a = 0
-  b = 0
-  
-  arr.each do |x|
-    b = 0
-    arr.each do |y|
-      if a != b && x + y == n
-        return true
-      end
-      b += 1
-    end
-    a += 1
   end
+  if (arr.length == 1)
+    return false
+  end
+  sorted_arr = arr.sort
+  head =0
+  tail = sorted_arr.length-1
   
+  while head < tail 
+    current_sum = sorted_arr[head] + sorted_arr[tail]
+    if current_sum == n
+      return true
+    elsif current_sum < n
+      head = head + 1
+    else 
+      tail = tail - 1
+    end
+  end
   return false
 end
