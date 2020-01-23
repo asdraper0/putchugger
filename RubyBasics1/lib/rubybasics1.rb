@@ -32,5 +32,23 @@ end
 
 # Part III
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if arr.size < 2
+    return false
+  end 
+  
+  a = 0
+  b = 0
+  
+  arr.each do |x|
+    b = 0
+    arr.each do |y|
+      if a != b && x + y == n
+        return true
+      end
+      b += 1
+    end
+    a += 1
+  end
+  
+  return false
 end
