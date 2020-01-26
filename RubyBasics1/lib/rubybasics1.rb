@@ -16,11 +16,14 @@ def max_2_sum arr
     return arr[0]
   end
   
-  first = -255
-  second = -255
+  arr2 = arr.sort
   
-  arr.each do |x|
+  first = arr2[0]
+  second = arr2[0]
+  
+  arr2.each do |x|
     if x > first
+      second = first
       first = x
     elsif x > second
       second = x
