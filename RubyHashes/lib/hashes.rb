@@ -39,5 +39,22 @@ end
 
 # Part III
 def hash_2_array contacts
-    # YOUR CODE HERE
+    result = [[],[],[]]
+    count = 0
+    
+    contacts.each do |x, y|
+        # x = key, y = subhash
+        # a = subkey 1, b = subkey 2
+        if contacts.empty?
+            result = [[],[],[]]
+        else
+            result[0][count] = y.fetch(:email)
+            result[1][count] = y.fetch(:phone)
+            result[2][count] = x.to_s
+        end
+        
+        count += 1
+    end
+    
+    return result
 end
