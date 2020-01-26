@@ -1,7 +1,20 @@
 # RubyHashes
 # Part I
 def array_2_hash emails, contacts
-    # YOUR CODE HERE
+    result = {}
+    count = 0
+    
+    contacts.each do |x, y|
+        if emails.empty?
+            result[x] = ''
+        else
+            result[x] = emails[count]
+        end
+        
+        count += 1
+    end
+    
+    return result
 end
 
 # Part II
