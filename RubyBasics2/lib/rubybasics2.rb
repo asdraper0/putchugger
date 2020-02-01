@@ -21,5 +21,9 @@ end
 
 # Part III
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if s.nil? || s == '' || s.match?(/^[a-zA-Z2-9]/)
+    return false
+  end
+  
+  return s.to_i(base = 10) % 4 == 0
 end
