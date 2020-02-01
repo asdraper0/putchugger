@@ -7,7 +7,16 @@ end
 
 # Part II
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if s.nil? || s == ''
+    return false
+  end 
+  
+  case s
+  when /^[aeiouAEIOU|0-9].*/, /^[^a-zA-Z0-9].*/
+    return false
+  else
+    return true
+  end
 end
 
 # Part III
