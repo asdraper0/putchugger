@@ -22,8 +22,30 @@ module FunWithStrings
     
     return b
   end
-  def anagram_groups
-    # your code here
+  def anagram_groups # i know this is a weirdly convoluted solution but hey it works
+    a = self.split(' ')
+    b = []
+    c = 0
+    d = 0
+    e = 0
+    
+    a.each do |x|
+      a.each do |y|
+        if x.chars.sort == y.chars.sort && x != y
+          b[c] = [x, y]
+          c += 1
+          e = 1
+        elsif y == a[a.length - 1] && e == 0
+          b[c] = [x]
+          c += 1
+        end
+        d += 1
+      end
+      d = 0
+      e = 0
+    end
+    
+    return b
   end
 end
 
