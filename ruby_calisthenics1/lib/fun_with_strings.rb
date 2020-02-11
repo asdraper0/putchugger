@@ -7,7 +7,20 @@ module FunWithStrings
     return b == c
   end
   def count_words
-    # your code here
+    a = self.downcase.split(/\W/)
+    b = Hash.new
+    
+    a.each do |x|
+      if x != ""
+        if b.has_key?(x)
+          b[x] += 1
+        else
+          b[x] = 1
+        end
+      end
+    end
+    
+    return b
   end
   def anagram_groups
     # your code here
