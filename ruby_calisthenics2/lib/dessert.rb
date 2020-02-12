@@ -18,4 +18,7 @@ class JellyBean < Dessert
     super(flavor + ' jelly bean', 5)
     @flavor = flavor
   end
+  def delicious?
+    return @flavor != 'licorice'
+  end
 end
