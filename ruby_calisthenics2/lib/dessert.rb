@@ -5,10 +5,10 @@ class Dessert
     @calories = calories
   end
   def healthy?
-    # your code here
+    return calories < 200
   end
   def delicious?
-    # your code here
+    return true
   end
 end
 
